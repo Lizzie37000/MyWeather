@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Divider, Input, Select, Space, Alert } from "antd";
+import { Table, Divider, Input, Select, Alert } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import { getList } from "@api/record";
@@ -68,15 +68,26 @@ function RecordWithSearch() {
 
   return (
     <div className="record-page">
-      <div className="title">Today's Weather</div>
-      <Divider />
-      <Space.Compact>
+      <div className="searchBox">
         <Select defaultValue="country" options={options} />
-        <Input defaultValue="Singa" addonAfter={<SearchOutlined />} />
-      </Space.Compact>
+        <Input className="my_ipt" defaultValue="Singa" addonAfter={<SearchOutlined />} />
+      </div>
       <div className="my_alert">
         <Alert message="Not found" type="error" showIcon closable />
       </div>
+      <div className="today_wrapper">
+        <div className="title">Today's Weather</div>
+        <div className="tem_num">26°</div>
+        <div>H:29° L:26°</div>
+        <div className="foot">
+          <div>Johor,MY</div>
+          <div>01-09-2022 09:41am</div>
+          <div>Humidity:58%</div>
+          <div>Clouds</div>
+        </div>
+
+      </div>
+      <Divider />
       <div className='tb_wrapper'>
         <div className="title">Search History</div>
         <Table

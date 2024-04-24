@@ -12,18 +12,50 @@
     height: inherit;
   }
   .content {
+    position: relative;
     width: 100%;
     padding: 40px;
     border-radius: 8px;
     border: 1px solid #000;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    .record-page {
+      width: 700px;
+      .searchBox {
+        width: 100%;
+        display: flex;
+        .my_ipt{
+          flex: 1;
+        }
+      }
+    }
     .my_alert {
       margin-top: 10px;
       margin-bottom: 30px;
     }
+    .title {
+      z-index: 1;
+    }
+    .today_wrapper {
+      .tem_num {
+        font-size: 32px;
+        font-weight: bold;
+        color: purple;
+      }
+      .foot {
+        color: dimgrey;
+        display: flex;
+        justify-content: space-between;
+        // div + div {
+        //   margin-left: 10px;
+        // }
+      }
+    }
     .tb_wrapper {
-      padding: 20px;
-      border-radius: 24px;
-      background-color: rgba(255, 255, 255, 0.5);
+      // padding: 20px;
+      // border-radius: 24px;
+      // background-color: rgba(255, 255, 255, 0.5);
     }
   }
 }
@@ -39,7 +71,7 @@
     }
     td {
       border: unset;
-      &.ant-table-cell-row-hover{
+      &.ant-table-cell-row-hover {
         background: rgba(255, 255, 255, 0.5) !important;
       }
     }
